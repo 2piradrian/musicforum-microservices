@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://music-forum:music-forum@localhost:27017/reports?authSource=admin
