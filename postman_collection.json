@@ -1,0 +1,620 @@
+{
+	"info": {
+		"_postman_id": "f76fe2df-a3e4-40d5-a20e-69ceea637f64",
+		"name": "Music Forum",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25342060"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/get-by-id/e7e19a07-8a83-4264-8a2a-53ac5c8bb326",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"get-by-id",
+								"e7e19a07-8a83-4264-8a2a-53ac5c8bb326"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/users/auth",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"2piradrian@gmail.com\",\r\n    \"password\": \"MyP@ssword4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"2piradrian\",\r\n    \"password\": \"MyP@ssword4\",\r\n    \"email\": \"2piradrian@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/users/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forum",
+			"item": [
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/forum/get-by-id/eef984d7-1990-4ec0-82ff-4651287753c1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forum",
+								"get-by-id",
+								"eef984d7-1990-4ec0-82ff-4651287753c1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/forum/get-forums?category=SONGS&size=1&page=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forum",
+								"get-forums"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "SONGS",
+									"description": "optional"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Monthly",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/forum/get-monthly-forums?month=1&year=2025",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forum",
+								"get-monthly-forums"
+							],
+							"query": [
+								{
+									"key": "month",
+									"value": "1"
+								},
+								{
+									"key": "year",
+									"value": "2025"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"¿Recomendaciones de canciones de jazz con progresiones 2-5-1?\",\r\n    \"content\": \"Estoy buscando ejemplos claros donde estas progresiones se utilicen de manera destacada, tanto en composiciones como en improvisaciones, para analizar cómo se aplican en diferentes contextos y estilos dentro del jazz.\",\r\n    \"category\": \"SONGS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/forum/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forum",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"forumId\": \"676e5e6d-b6f8-4ab0-a6bc-f6520e5291e0\",\r\n    \"title\": \"¿Alguien sabe qué acordes lleva 'Us and Them' de Pink Floyd?\",\r\n    \"content\": \"Estoy intentando analizar la estructura armónica de 'Us and Them' de *The Dark Side of the Moon*, pero no estoy seguro de qué acordes se utilizan exactamente. ¿Alguien tiene el análisis o los acordes completos de la canción? Me interesa especialmente cómo los acordes contribuyen a la atmósfera melancólica y reflexiva del tema.\",\r\n    \"category\": \"SONGS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/forum/edit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forum",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Votes",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"forumId\": \"eef984d7-1990-4ec0-82ff-4651287753c1\",\r\n    \"voteType\": \"UPVOTE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/forum/toggle-votes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forum",
+								"toggle-votes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"forumId\": \"e7c1b9a1-bbe0-4085-9f97-44d07b9146a9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/forum/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forum",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Get Pages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/comment/get-comments?forumId=bdd77e84-8cfe-4b99-8176-b083658aa947&size=10&page=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"comment",
+								"get-comments"
+							],
+							"query": [
+								{
+									"key": "forumId",
+									"value": "bdd77e84-8cfe-4b99-8176-b083658aa947"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"forumId\": \"bdd77e84-8cfe-4b99-8176-b083658aa947\",\r\n    \"content\": \"El solo tiene los siguentes acordes: ( Dsus2  Esus2/D  Dm(maj7)  G/D  Dsus2 )x2 ( Bm  Bm/A  D/G  C  Bm  A  Bm  Bm/A  G  C )\",\r\n    \"replyTo\": \"9990ab09-a183-4d14-8d04-64988affd4b3\" // Optional\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/comment/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"comment",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentId\": \"e7c1b9a1-bbe0-4085-9f97-44d07b9146a9\",\r\n    \"content\": \"El solo es: ( Dsus2  Esus2/D  Dm(maj7)  G/D  Dsus2 )x2 ( Bm  Bm/A  D/G  C  Bm  A  Bm  Bm/A  G  C )\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/comment/edit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"comment",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Votes",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentId\": \"676e5e6d-b6f8-4ab0-a6bc-f6520e5291e0\",\r\n    \"voteType\": \"UPVOTE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/comment/toggle-votes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"comment",
+								"toggle-votes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentId\": \"e7c1b9a1-bbe0-4085-9f97-44d07b9146a9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/comment/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"comment",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Monthly Forums",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/report/forums/monthly?month=1&year=2025",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"forums",
+								"monthly"
+							],
+							"query": [
+								{
+									"key": "month",
+									"value": "1"
+								},
+								{
+									"key": "year",
+									"value": "2025"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:4040",
+			"type": "string"
+		},
+		{
+			"key": "access token",
+			"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIycGlyYWRyaWFuQGdtYWlsLmNvbSIsImlhdCI6MTczNTc1NTk4NCwiZXhwIjoxNzM1ODQyMzg0fQ.CytkZyIhLtVw_2LiOP05bw4uTjXsuiq2yoZ0Tuw4AkY",
+			"type": "string"
+		}
+	]
+}

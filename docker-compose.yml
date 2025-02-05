@@ -1,0 +1,39 @@
+services:
+
+  forum-main-db:
+    image: postgres:15.3
+    restart: always
+    environment:
+      POSTGRES_DB: 'forums-db'
+      POSTGRES_USER: 'music-forum'
+      POSTGRES_PASSWORD: 'music-forum'
+    volumes:
+      - ./forum-main-db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432 # default port for main db
+
+  user-main-db:
+    image: postgres:15.3
+    restart: always
+    environment:
+      POSTGRES_DB: 'users-db'
+      POSTGRES_USER: 'music-forum'
+      POSTGRES_PASSWORD: 'music-forum'
+    volumes:
+      - ./user-main-db:/var/lib/postgresql/data
+    ports:
+      - 5433:5432 # different port for user db
+
+  reports-db:
+    image: mongo:7.0.5
+    restart: always
+    container_name: mongo-db
+    hostname: mongodb
+    environment:
+      MONGO_INITDB_DATABASE: 'reports'
+      MONGO_INITDB_ROOT_USERNAME: 'music-forum'
+      MONGO_INITDB_ROOT_PASSWORD: 'music-forum'
+    volumes:
+      - ./reports-db:/data/db
+    ports:
+      - "27017:27017"
